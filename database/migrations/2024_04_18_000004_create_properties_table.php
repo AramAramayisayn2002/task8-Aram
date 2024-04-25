@@ -19,7 +19,7 @@ class CreatePropertiesTable extends Migration
             $table->string('city');
             $table->string('address');
             $table->string('description');
-            $table->string('status');
+            $table->integer('status');
             $table->integer('price');
             $table->unsignedBigInteger('type_id');
             $table->unsignedBigInteger('user_id');

@@ -22,6 +22,6 @@ class RegistrationController extends Controller
     public function signUp(RegistrationRequest $request)
     {
         $user = $this->registrationService->signUp($request);
-        return redirect()->route('/');
+        return redirect()->route('index');
     }
 }

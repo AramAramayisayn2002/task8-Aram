@@ -16,6 +16,7 @@ class User extends AuthenticatableUser implements Authenticatable
         'password',
         'phone',
         'about',
-        'image_id'
+        'image_id',
+        'remember_token'
     ];
 }

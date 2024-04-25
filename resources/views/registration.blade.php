@@ -92,7 +92,8 @@
                         <div class="tabs-container alt">
                             <!-- Register -->
                             <div class="tab-content" id="tab2">
-                                <form method="post" class="register" action="{{route('signUp')}}">
+                                <form method="POST" class="register" action="{{route('signUp')}}">
+                                    @csrf
                                     <p class="form-row form-row-wide">
                                         <label for="username2">Username:
                                             <i class="im im-icon-Male"></i>
@@ -108,13 +109,13 @@
                                     <p class="form-row form-row-wide">
                                         <label for="password1">Password:
                                             <i class="im im-icon-Lock-2"></i>
-                                            <input class="input-text" type="password" name="password1" id="password1"/>
+                                            <input class="input-text" type="password" name="password" id="password1"/>
                                         </label>
                                     </p>
                                     <p class="form-row form-row-wide">
                                         <label for="password2">Repeat Password:
                                             <i class="im im-icon-Lock-2"></i>
-                                            <input class="input-text" type="password" name="password2" id="password2"/>
+                                            <input class="input-text" type="password" name="password_confirmation" id="password2"/>
                                         </label>
                                     </p>
                                     <p class="form-row">

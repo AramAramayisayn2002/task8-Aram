@@ -92,7 +92,8 @@
                     <div class="tabs-container alt">
                         <!-- Login -->
                         <div class="tab-content" id="tab1">
-                            <form method="post" class="login">
+                            <form method="POST" class="login" action="{{route('login')}}">
+                                @csrf
                                 <p class="form-row form-row-wide">
                                     <label for="username">Username:
                                         <i class="im im-icon-Male"></i>
