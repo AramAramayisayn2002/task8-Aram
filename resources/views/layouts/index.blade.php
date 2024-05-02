@@ -44,7 +44,8 @@
             <div class="right-side">
                 <!-- Social Icons -->
                 <ul class="social-icons">
-                    <li><a class="facebook" href="https://www.facebook.com/?locale=ru_RU"><i class="icon-facebook"></i></a></li>
+                    <li><a class="facebook" href="https://www.facebook.com/?locale=ru_RU"><i class="icon-facebook"></i></a>
+                    </li>
                     <li><a class="twitter" href="https://twitter.com/?lang=ru"><i class="icon-twitter"></i></a></li>
                     <li><a class="gplus" href="https://myaccount.google.com/profile"><i class="icon-gplus"></i></a></li>
                     <li><a class="pinterest" href="https://www.pinterest.com/"><i class="icon-pinterest"></i></a></li>
@@ -94,8 +95,10 @@
                                 </li>
                                 <li><a href="#">Grid Layout</a>
                                     <ul>
-                                        <li><a href="listings-grid-standard-with-sidebar.html">Standard With Sidebar</a></li>
-                                        <li><a href="listings-grid-compact-with-sidebar.html">Compact With Sidebar</a></li>
+                                        <li><a href="listings-grid-standard-with-sidebar.html">Standard With Sidebar</a>
+                                        </li>
+                                        <li><a href="listings-grid-compact-with-sidebar.html">Compact With Sidebar</a>
+                                        </li>
                                         <li><a href="listings-grid-with-map.html">With Map</a></li>
                                         <li><a href="listings-grid-full-width.html">Full Width</a></li>
                                     </ul>
@@ -172,75 +175,76 @@
             <div class="right-side">
                 <!-- Header Widget -->
                 <div class="header-widget">
-                    <a href="{{route('loginPage')}}" class="sign-in"><i class="fa fa-user"></i> Log In /
-                        Register</a>
-                    <a href="" class="button border">Submit Property</a>
+                    @if (Auth::user())
+                        <a href="{{route('logout')}}" class="sign-in"><i class="fa fa-user"></i> Log Out</a>
+                    @else
+                        <a href="{{route('loginPage')}}" class="sign-in"><i class="fa fa-user"></i> Log In /
+                            Register</a>
+                    @endif
+                    <a href="{{route('property.create')}}" class="button border">Submit Property</a>
                 </div>
                 <!-- Header Widget / End -->
             </div>
             <!-- Right Side Content / End -->
         </div>
     </div>
-    <!-- Header / End -->
-</header>
-@yield('structure')
-<!-- Footer ================================================== -->
-<div id="footer" class="sticky-footer">
-    <!-- Main -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5 col-sm-6">
-                <img class="footer-logo" src="images/logo.png" alt="">
-                <br><br>
-                <p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut
-                    lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
-            </div>
-            <div class="col-md-4 col-sm-6 ">
-                <h4>Helpful Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Sign Up</a></li>
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">Add Property</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-                <ul class="footer-links">
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Our Agents</a></li>
-                    <li><a href="#">How It Works</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-md-3  col-sm-12">
-                <h4>Contact Us</h4>
-                <div class="text-widget">
-                    <span>12345 Little Lonsdale St, Melbourne</span> <br>
-                    Phone: <span>(123) 123-456 </span><br>
-                    E-Mail:<span> <a href="#">office@example.com</a> </span><br>
+    @yield('structure')
+    <!-- Footer ================================================== -->
+    <div id="footer" class="sticky-footer">
+        <!-- Main -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-6">
+                    <img class="footer-logo" src="images/logo.png" alt="">
+                    <br><br>
+                    <p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut
+                        lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
                 </div>
-                <ul class="social-icons margin-top-20">
-                    <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
-                    <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
-                    <li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li>
-                </ul>
+                <div class="col-md-4 col-sm-6 ">
+                    <h4>Helpful Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Add Property</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Our Agents</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-3  col-sm-12">
+                    <h4>Contact Us</h4>
+                    <div class="text-widget">
+                        <span>12345 Little Lonsdale St, Melbourne</span> <br>
+                        Phone: <span>(123) 123-456 </span><br>
+                        E-Mail:<span> <a href="#">office@example.com</a> </span><br>
+                    </div>
+                    <ul class="social-icons margin-top-20">
+                        <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
+                        <li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <!-- Copyright -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="copyrights">© 2016 Findeo. All Rights Reserved.</div>
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyrights">© 2016 Findeo. All Rights Reserved.</div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Footer / End -->
-<!-- Back To Top Button -->
-<div id="backtotop"><a href="#"></a></div>
-@vite(['public/scripts/bootstrap.js'])
+    <!-- Footer / End -->
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
 @vite(['public/scripts/jquery.js'])
 @vite(['resources/scripts/jquery-3.4.1.min.js'])
 @vite(['public/scripts/jquery-migrate-3.1.0.min.js'])
@@ -254,5 +258,6 @@
 @vite(['public/scripts/mmenu.min.js'])
 @vite(['public/scripts/tooltips.min.js'])
 @vite(['public/scripts/custom.js'])
+@vite(['public/scripts/dropzone.js'])
 </body>
 </html>

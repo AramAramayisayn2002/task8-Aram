@@ -24,4 +24,10 @@ class LoginController extends Controller
         }
         return redirect()->route('loginPage');
     }
+
+    public function logout()
+    {
+        $this->loginService->logout();
+        return redirect()->route('loginPage');
+    }
 }
