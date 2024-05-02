@@ -41,4 +41,9 @@ class PropertyController extends Controller
         }
         $newProperty = $this->propertyService->store($request);
     }
+
+    public function show()
+    {
+        return view('listings');
+    }
 }

@@ -245,15 +245,16 @@
     <!-- Footer / End -->
     <!-- Back To Top Button -->
     <div id="backtotop"><a href="#"></a></div>
-@vite(['public/scripts/jquery.js'])
+{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>--}}
+{{--@vite(['public/scripts/jquery.js'])--}}
 @vite(['resources/scripts/jquery-3.4.1.min.js'])
 @vite(['public/scripts/jquery-migrate-3.1.0.min.js'])
 @vite(['public/scripts/chosen.min.js'])
 @vite(['public/scripts/magnific-popup.min.js'])
 @vite(['public/scripts/owl.carousel.min.js'])
 @vite(['public/scripts/rangeSlider.js'])
-@vite(['public/scripts/sticky-kit.min.js'])
 @vite(['public/scripts/slick.min.js'])
+@vite(['public/scripts/sticky-kit.min.js'])
 @vite(['public/scripts/masonry.min.js'])
 @vite(['public/scripts/mmenu.min.js'])
 @vite(['public/scripts/tooltips.min.js'])

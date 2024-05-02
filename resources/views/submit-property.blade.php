@@ -242,7 +242,6 @@
                         <div class="submit-section">
                             <form method="POST" action="{{ route('uploadImage') }}" enctype="multipart/form-data"
                                   class="dropzone"
-                                  id="dropzone">
                                 @csrf
                             </form>
                             <form method="POST" action="{{ route('uploadImage') }}" enctype="multipart/form-data"
@@ -250,7 +249,8 @@
                                   id="dropzone">
                                 @csrf
                             </form>
-                        </div>
+                    <div id="submitForm"></div>
+                </div>
                         <!-- Section / End -->
                     </form>
                 </div>
@@ -259,15 +259,16 @@
     </div>
     <!-- Back To Top Button -->
     <div id="backtotop"><a href="#"></a></div>
+{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>--}}
     <script>
         $(document).ready(function() {
-            // Initialize Dropzone
-            Dropzone.options.myDropzone = {
+            Dropzone.options.dropzone = {
                 paramName: 'file',
                 acceptedFiles: '.jpg, .jpeg, .png',
-                maxFilesize: 100, // in MB
+                maxFilesize: 5,
                 dictDefaultMessage: "<i class='sl sl-icon-plus'></i> Click here or drop files to upload",
                 success: function(file, response) {
+                    alert();
                     console.log('File ID:', response.id);
                     $('#submitForm').append(`<input hidden name='imageIds[]' value='${response.id}'></input>`);
                 }

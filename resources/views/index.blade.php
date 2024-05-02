@@ -413,8 +413,8 @@
                             <div class="icon-container">
                                 <i class="im im-icon-Office"></i>
                                 <div class="icon-links">
-                                    <a href="listings-grid-standard-with-sidebar.html">For Sale</a>
-                                    <a href="listings-grid-standard-with-sidebar.html">For Rent</a>
+                                    <a href="listings.blade.php">For Sale</a>
+                                    <a href="listings.blade.php">For Rent</a>
                                 </div>
                             </div>
                             <h3>Apartments</h3>
@@ -427,8 +427,8 @@
                             <div class="icon-container">
                                 <i class="im im-icon-Home-2"></i>
                                 <div class="icon-links">
-                                    <a href="listings-grid-standard-with-sidebar.html">For Sale</a>
-                                    <a href="listings-grid-standard-with-sidebar.html">For Rent</a>
+                                    <a href="listings.blade.php">For Sale</a>
+                                    <a href="listings.blade.php">For Rent</a>
                                 </div>
                             </div>
                             <h3>Houses</h3>
@@ -441,8 +441,8 @@
                             <div class="icon-container">
                                 <i class="im im-icon-Car-3"></i>
                                 <div class="icon-links">
-                                    <a href="listings-grid-standard-with-sidebar.html">For Sale</a>
-                                    <a href="listings-grid-standard-with-sidebar.html">For Rent</a>
+                                    <a href="listings.blade.php">For Sale</a>
+                                    <a href="listings.blade.php">For Rent</a>
                                 </div>
                             </div>
                             <h3>Garages</h3>
@@ -455,8 +455,8 @@
                             <div class="icon-container">
                                 <i class="im im-icon-Clothing-Store"></i>
                                 <div class="icon-links">
-                                    <a href="listings-grid-standard-with-sidebar.html">For Sale</a>
-                                    <a href="listings-grid-standard-with-sidebar.html">For Rent</a>
+                                    <a href="listings.blade.php">For Sale</a>
+                                    <a href="listings.blade.php">For Rent</a>
                                 </div>
                             </div>
                             <h3>Commercial</h3>

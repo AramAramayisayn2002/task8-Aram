@@ -16,4 +16,5 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/property', [PropertyController::class, 'create'])->name('property.create');
 Route::post('/store', [PropertyController::class, 'store'])->name('property.store');
+Route::get('/show', [PropertyController::class, 'show'])->name('property.show');
 Route::post('/upload', [ImageController::class, 'upload'])->name('uploadImage');

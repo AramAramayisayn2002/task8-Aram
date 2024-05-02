@@ -2,25 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ImageRequest;
 use App\Models\Image;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
-    public function upload(Request $request)
+    public function upload(ImageRequest $request)
     {
-//        dd($request->file('file'));
-        $file = $request->file('file');
-//        dd($file);
-        $name = uniqid() . '.' .  $file->getClientOriginalExtension();
-        $file->storeAs('public/images', $name);
-        return response()->json(['name' => $name]);
+        $image = $request->file('file');
+        $fileName = uniqid() . '_' . time() . '.' . $image->getClientOriginalExtension();
+        $request->file('file')->storeAs('images', $fileName, 'public');
+        $imagePath = storage_path('app/public/image' . '/' . $fileName);
+        $newImage = new Image();
+        $newImage->fill(['name' => $imagePath])->save();
+        return response()->json(['id' => $newImage->id]);
     }
 }
-
-//        $ImagePath = storage_path('app/public/images/' . $name);
-//        Storage::put('public/images' . $name);
-
-//        dd($request->file);
-//        $newImage = new Image();
-//        $newImage->name = uniqid() . '.'
