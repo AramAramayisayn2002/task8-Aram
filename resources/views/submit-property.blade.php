@@ -21,6 +21,7 @@
             <div class="col-md-12">
                 <div class="submit-page">
                     <form method="POST" action="{{route('property.store')}}">
+                        @csrf
                         <div class="notification notice large margin-bottom-55">
                             <h4>Don't Have an Account?</h4>
                             <p>If you don't have an account you can create one by entering your email address in contact
@@ -31,7 +32,8 @@
                         <div class="submit-section">
                             <!-- Title -->
                             <div class="form">
-                                <h5>Property Title <i class="tip" data-tip-content="Type title that will also contains an unique feature of your property (e.g. renovated, air contidioned)"></i>
+                                <h5>Property Title <i class="tip"
+                                                      data-tip-content="Type title that will also contains an unique feature of your property (e.g. renovated, air contidioned)"></i>
                                 </h5>
                                 <input class="search-field" type="text" value="" name="title"/>
                             </div>
@@ -61,7 +63,8 @@
                             <div class="row with-forms">
                                 <!-- Price -->
                                 <div class="col-md-4">
-                                    <h5>Price <i class="tip"    data-tip-content="Type overall or monthly price if property is for rent"></i>
+                                    <h5>Price <i class="tip"
+                                                 data-tip-content="Type overall or monthly price if property is for rent"></i>
                                     </h5>
                                     <div class="select-input disabled-first-option">
                                         <input type="text" data-unit="USD" name="price">
@@ -236,43 +239,41 @@
                         <!-- Section / End -->
                         <div class="divider"></div>
                         <button type="submit" class="button preview margin-top-5">Preview <i
-                                class="fa fa-arrow-circle-right"></i></button>
+                                class="fa fa-arrow-circle-right"></i>
+                        </button>
                         <!-- Section -->
                         <h3>Gallery</h3>
                         <div class="submit-section">
                             <form method="POST" action="{{ route('uploadImage') }}" enctype="multipart/form-data"
-                                  class="dropzone"
+                                          class="dropzone"
                                 @csrf
                             </form>
                             <form method="POST" action="{{ route('uploadImage') }}" enctype="multipart/form-data"
-                                  class="dropzone"
-                                  id="dropzone">
+                                  class="dropzone" id="dropzone">
                                 @csrf
                             </form>
-                    <div id="submitForm"></div>
-                </div>
-                        <!-- Section / End -->
-                    </form>
-                </div>
+                            <div id="submitForm"></div>
+                        </div>
+                <!-- Section / End -->
+                </form>
             </div>
         </div>
     </div>
+    </div>
     <!-- Back To Top Button -->
     <div id="backtotop"><a href="#"></a></div>
-{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>--}}
+    <script src="scripts/dropzone.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"
+                integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
-            Dropzone.options.dropzone = {
-                paramName: 'file',
-                acceptedFiles: '.jpg, .jpeg, .png',
-                maxFilesize: 5,
-                dictDefaultMessage: "<i class='sl sl-icon-plus'></i> Click here or drop files to upload",
-                success: function(file, response) {
-                    alert();
-                    console.log('File ID:', response.id);
-                    $('#submitForm').append(`<input hidden name='imageIds[]' value='${response.id}'></input>`);
-                }
-            };
-        });
+        Dropzone.options.dropzone = {
+            paramName: 'file',
+            acceptedFiles: '.jpg, .jpeg, .png',
+            maxFilesize: 5,
+            dictDefaultMessage: "<i class='sl sl-icon-plus'></i> Click here or drop files to upload",
+            success: function (file, response) {
+                $('#submitForm').append(`<input hidden name='imageIds[]' value='${response.id}'></input>`);
+            }
+        };
     </script>
 @endsection

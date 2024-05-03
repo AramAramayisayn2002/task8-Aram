@@ -25,25 +25,22 @@ class PropertyController extends Controller
     public function store(PropertyRequest $request)
     {
         if (!Auth::user()) {
-            if ($this->loginService->getUserByEmail($request->email)) {
+            if ($this->loginService->getUserEmail($request->email)) {
                 return redirect()->back()->with('error', 'An account with this email already exists.');
             } else {
                 $password = Str::random(10);
-                $newUser = $this->loginService->createUser($request->username, $request->email, $request->phone, $password);
-                $this->loginService->sendEmail($newUser->email, $password);
+                $this->loginService->createUser($request->username, $request->email, $request->phone, $password);
                 $request->password = $password;
-                if ($this->loginService->login($request)) {
-                    return redirect()->route('index');
-                } else {
-                    return redirect()->route('loginPage');
-                }
+                $this->loginService->login($request);
             }
         }
         $newProperty = $this->propertyService->store($request);
+        return redirect()->route('property.show', $newProperty->id);
     }
 
-    public function show()
+    public function show($id)
     {
-        return view('listings');
+        $property = $this->propertyService->getPropertyId($id);
+        return view('single-property', compact('id'));
     }
 }

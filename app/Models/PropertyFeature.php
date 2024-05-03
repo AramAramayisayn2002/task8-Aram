@@ -14,7 +14,6 @@ class PropertyFeature extends Model
 
     protected $fillable = [
         'property_id',
-        'feature_id',
-        'value'
+        'feature_id'
     ];
 }

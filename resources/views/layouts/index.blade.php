@@ -245,20 +245,27 @@
     <!-- Footer / End -->
     <!-- Back To Top Button -->
     <div id="backtotop"><a href="#"></a></div>
-{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>--}}
-{{--@vite(['public/scripts/jquery.js'])--}}
-@vite(['resources/scripts/jquery-3.4.1.min.js'])
-@vite(['public/scripts/jquery-migrate-3.1.0.min.js'])
-@vite(['public/scripts/chosen.min.js'])
-@vite(['public/scripts/magnific-popup.min.js'])
-@vite(['public/scripts/owl.carousel.min.js'])
-@vite(['public/scripts/rangeSlider.js'])
-@vite(['public/scripts/slick.min.js'])
-@vite(['public/scripts/sticky-kit.min.js'])
-@vite(['public/scripts/masonry.min.js'])
-@vite(['public/scripts/mmenu.min.js'])
-@vite(['public/scripts/tooltips.min.js'])
-@vite(['public/scripts/custom.js'])
-@vite(['public/scripts/dropzone.js'])
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"></script>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="scripts/jquery-migrate-3.1.0.min.js"></script>
+    <script src="scripts/chosen.min.js"></script>
+    <script src="scripts/magnific-popup.min.js"></script>
+    <script src="scripts/owl.carousel.min.js"></script>
+    <script src="scripts/rangeSlider.js"></script>
+    <script src="scripts/sticky-kit.min.js"></script>
+    <script src="scripts/slick.min.js"></script>
+    <script src="scripts/masonry.min.js"></script>
+    <script src="scripts/mmenu.min.js"></script>
+    <script src="scripts/tooltips.min.js"></script>
+{{--    <script src="scripts/custom.js"></script>--}}
+    <script src="scripts/dropzone.js"></script>
+    <script src="scripts/datepicker.js"></script>
+    <script src="scripts/moment.min.js"></script>
+    <script src="scripts/daterangepicker.js"></script>
+    <script src="scripts/timeslot.js"></script>
+    <script src="scripts/autocomplete.js"></script>
 </body>
 </html>

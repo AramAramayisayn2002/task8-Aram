@@ -25,7 +25,7 @@ class LoginService
         Auth::logout();
     }
 
-    public function getUserByEmail($email)
+    public function getUserEmail($email)
     {
         return User::where('email', $email)->first();
     }
@@ -39,11 +39,6 @@ class LoginService
             'phone' => $phone
         ]);
         $newUser->save();
-        return $newUser;
-    }
-
-    public function sendEmail($email, $password)
-    {
         Mail::to($email)->send(new UserMail($password));
     }
 }

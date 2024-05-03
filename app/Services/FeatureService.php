@@ -6,7 +6,7 @@ use App\Models\PropertyFeature;
 
 class FeatureService
 {
-    public function store($property_id, $feature_id)
+    public function storeContact($property_id, $feature_id)
     {
         return PropertyFeature::updateOrCreate(
             [
